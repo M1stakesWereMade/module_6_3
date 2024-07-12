@@ -14,10 +14,11 @@ class Eagle:
     def fly(self, dy):
         self.y_distance += dy
 
-class Pegasus(Horse, Eagle):
+class Pegasus(Eagle, Horse):
     def __init__(self):
+        super().__init__()
         Horse.__init__(self)
-        Eagle.__init__(self)
+        self.sound = 'I train, eat, sleep, and repeat'
 
     def move(self, dx, dy):
         Horse.run(self, dx)
